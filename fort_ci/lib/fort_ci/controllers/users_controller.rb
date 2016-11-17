@@ -1,6 +1,6 @@
 require "sinatra/extension"
 
-module SimpleCi
+module FortCI
   module UsersController
     extend Sinatra::Extension
 

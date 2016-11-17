@@ -1,0 +1,182 @@
+{
+  "job": {
+    "id": "basic_pipeline.9.first-1",
+    "repo": {
+      "owner": "ColDog",
+      "name": "ci-sample",
+      "provider": "github.com",
+      "token": "",
+      "commit": "4c8bbb230e3fa7e99812da677d2dba12d6d19b71"
+    },
+    "builds": null,
+    "services": null,
+    "sections": [
+      {
+        "run_on_failure": false,
+        "run_all_cmds": false,
+        "name": "setup",
+        "commands": [
+          "echo 'setup'"
+        ],
+        "on_success": null,
+        "on_failure": null
+      },
+      {
+        "run_on_failure": false,
+        "run_all_cmds": false,
+        "name": "test",
+        "commands": [
+          "echo 'testing'"
+        ],
+        "on_success": null,
+        "on_failure": null
+      },
+      {
+        "run_on_failure": false,
+        "run_all_cmds": false,
+        "name": "after",
+        "commands": [
+          "echo 'after'"
+        ],
+        "on_success": null,
+        "on_failure": null
+      }
+    ],
+    "env": null
+  },
+  "results": [
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "fetch"
+      ],
+      "time": 876470951,
+      "output": [],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "checkout",
+        "4c8bbb230e3fa7e99812da677d2dba12d6d19b71"
+      ],
+      "time": 9585029,
+      "output": [
+        "HEAD is now at 4c8bbb2... update"
+      ],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "show",
+        "--quiet",
+        "--format=%ae",
+        "4c8bbb230e3fa7e99812da677d2dba12d6d19b71"
+      ],
+      "time": 7334439,
+      "output": [
+        "colinwalker270@gmail.com"
+      ],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "rev-parse",
+        "--abbrev-ref",
+        "HEAD"
+      ],
+      "time": 6513205,
+      "output": [
+        "HEAD"
+      ],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "ls",
+        "-a"
+      ],
+      "time": 4643850,
+      "output": [
+        "."
+      ],
+      "error": null
+    },
+    {
+      "topic": "services",
+      "cmd": [
+        "docker",
+        "network",
+        "create",
+        "basic_pipeline.9.first-1"
+      ],
+      "time": 813185070,
+      "output": [
+        "25d3fb0ed11119aacfb486a2992f05fc0c4da3d8fc9ea24c76ff5f6b6c15968e"
+      ],
+      "error": null
+    },
+    {
+      "topic": "sections/setup",
+      "cmd": [
+        "sh",
+        "-c",
+        "echo 'setup'"
+      ],
+      "time": 4659000,
+      "output": [
+        "setup"
+      ],
+      "error": null
+    },
+    {
+      "topic": "sections/test",
+      "cmd": [
+        "sh",
+        "-c",
+        "echo 'testing'"
+      ],
+      "time": 3559000,
+      "output": [
+        "testing"
+      ],
+      "error": null
+    },
+    {
+      "topic": "sections/after",
+      "cmd": [
+        "sh",
+        "-c",
+        "echo 'after'"
+      ],
+      "time": 4344667,
+      "output": [
+        "after"
+      ],
+      "error": null
+    },
+    {
+      "topic": "cleanup",
+      "cmd": [
+        "docker",
+        "network",
+        "rm",
+        "basic_pipeline.9.first-1"
+      ],
+      "time": 838120792,
+      "output": [
+        "basic_pipeline.9.first-1"
+      ],
+      "error": null
+    }
+  ],
+  "failure": null,
+  "workspace": "/Users/colin/Workspace/go/src/github.com/coldog/ci-minion/workspace/ci-sample"
+}

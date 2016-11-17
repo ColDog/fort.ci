@@ -1,6 +1,6 @@
 require "fort_ci/serializers/serializer"
 
-module SimpleCi
+module FortCI
   class PipelineSerializer < BaseSerializer
     has_many :jobs, if: :show_all?
     has_one :project, if: :show_all?

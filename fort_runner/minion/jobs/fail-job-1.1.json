@@ -1,0 +1,86 @@
+{
+  "job": {
+    "id": "1.1",
+    "name": "fail-job",
+    "repo": null,
+    "builds": null,
+    "services": null,
+    "sections": [
+      {
+        "run_on_failure": false,
+        "run_all_cmds": false,
+        "name": "fail",
+        "commands": [
+          "exit 1"
+        ],
+        "on_success": [
+          "echo 'ok'"
+        ],
+        "on_failure": [
+          "echo 'fail'"
+        ]
+      }
+    ],
+    "env": null
+  },
+  "results": [
+    {
+      "topic": "services",
+      "cmd": [
+        "docker",
+        "network",
+        "create",
+        "fail-job-1.1"
+      ],
+      "time": 526277529,
+      "output": [
+        "f3b9079eb2b83853d0089168bf6dfafa7950da857753bbbdbf77f2824f3588d7"
+      ],
+      "error": null
+    },
+    {
+      "topic": "fail",
+      "cmd": [
+        "sh",
+        "-c",
+        "exit 1"
+      ],
+      "time": 3968516,
+      "output": [],
+      "error": {
+        "Stderr": null
+      }
+    },
+    {
+      "topic": "fail",
+      "cmd": [
+        "sh",
+        "-c",
+        "echo 'fail'"
+      ],
+      "time": 3331079,
+      "output": [
+        "fail"
+      ],
+      "error": null
+    },
+    {
+      "topic": "cleanup",
+      "cmd": [
+        "docker",
+        "network",
+        "rm",
+        "fail-job-1.1"
+      ],
+      "time": 610919561,
+      "output": [
+        "fail-job-1.1"
+      ],
+      "error": null
+    }
+  ],
+  "failure": {
+    "Stderr": null
+  },
+  "workspace": ""
+}

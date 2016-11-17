@@ -1,6 +1,6 @@
 require "faraday"
 
-module SimpleCi
+module FortCI
   class GithubClient
 
     def initialize(username, token)

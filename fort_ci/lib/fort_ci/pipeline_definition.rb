@@ -1,4 +1,4 @@
-module SimpleCi
+module FortCI
   class PipelineDefinition
     attr_reader :pipeline, :event
 

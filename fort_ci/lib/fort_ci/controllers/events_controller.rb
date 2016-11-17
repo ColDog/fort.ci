@@ -1,7 +1,7 @@
 require "sinatra/extension"
 require "fort_ci/event"
 
-module SimpleCi
+module FortCI
   module EventsController
     extend Sinatra::Extension
 

@@ -1,6 +1,6 @@
 require "fort_ci/version"
 require "fort_ci/env"
 
-module SimpleCi
+module FortCI
   # Your code goes here...
 end

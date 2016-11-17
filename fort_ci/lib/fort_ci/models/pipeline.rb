@@ -1,6 +1,6 @@
 require "fort_ci/models/model"
 
-module SimpleCi
+module FortCI
   class Pipeline < Model
     belongs_to :project, optional: true
     has_many :jobs

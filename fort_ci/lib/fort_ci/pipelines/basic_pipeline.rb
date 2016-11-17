@@ -1,6 +1,6 @@
 require "fort_ci/pipeline_definition"
 
-class BasicPipeline < SimpleCi::PipelineDefinition
+class BasicPipeline < FortCI::PipelineDefinition
   stage :first
 
   def first

@@ -1,0 +1,133 @@
+{
+  "job": {
+    "id": "1.1",
+    "name": "services-job",
+    "repo": null,
+    "builds": null,
+    "services": [
+      {
+        "name": "mysql",
+        "docker": {
+          "image": "mysql:5.7",
+          "name": "mysql",
+          "cmd": "",
+          "entryPoint": "",
+          "netAlias": "mysql",
+          "env": null,
+          "workDir": "",
+          "tty": false,
+          "stdinOpen": false
+        },
+        "after": null,
+        "before": null
+      }
+    ],
+    "sections": [
+      {
+        "run_on_failure": false,
+        "run_all_cmds": false,
+        "name": "list-files",
+        "commands": [
+          "ls -a"
+        ],
+        "on_success": [
+          "echo 'ok'"
+        ],
+        "on_failure": [
+          "echo 'fail'"
+        ]
+      }
+    ],
+    "env": null
+  },
+  "results": [
+    {
+      "topic": "services",
+      "cmd": [
+        "docker",
+        "network",
+        "create",
+        "services-job-1.1"
+      ],
+      "time": 551132787,
+      "output": [
+        "909c66f3e301fdcfbc5f04b123a36bf2636f0193dff15e4b1493ec09838b183d"
+      ],
+      "error": null
+    },
+    {
+      "topic": "services/mysql",
+      "cmd": [
+        "docker",
+        "run",
+        "-d",
+        "--name=mysql",
+        "--network=services-job-1.1",
+        "--network-alias=mysql",
+        "mysql:5.7",
+        ""
+      ],
+      "time": 981153945,
+      "output": [
+        "b90b6444b6413a6d121180a127faf6224029f6bdcb22555ac4278a05f7daa606"
+      ],
+      "error": null
+    },
+    {
+      "topic": "list-files",
+      "cmd": [
+        "sh",
+        "-c",
+        "ls -a"
+      ],
+      "time": 6054532,
+      "output": [
+        "."
+      ],
+      "error": null
+    },
+    {
+      "topic": "list-files",
+      "cmd": [
+        "sh",
+        "-c",
+        "echo 'ok'"
+      ],
+      "time": 3684540,
+      "output": [
+        "ok"
+      ],
+      "error": null
+    },
+    {
+      "topic": "cleanup",
+      "cmd": [
+        "docker",
+        "rm",
+        "-f",
+        "mysql"
+      ],
+      "time": 578818566,
+      "output": [
+        "mysql"
+      ],
+      "error": null
+    },
+    {
+      "topic": "cleanup",
+      "cmd": [
+        "docker",
+        "network",
+        "rm",
+        "services-job-1.1"
+      ],
+      "time": 594302543,
+      "output": [
+        "services-job-1.1"
+      ],
+      "error": null
+    }
+  ],
+  "failure": null,
+  "workspace": ""
+}

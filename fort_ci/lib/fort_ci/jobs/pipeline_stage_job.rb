@@ -1,7 +1,7 @@
 require "fort_ci/event"
 require "worker"
 
-module SimpleCi
+module FortCI
   class PipelineStageJob < Worker::Job
     attr_reader :pipeline, :definition, :event
 

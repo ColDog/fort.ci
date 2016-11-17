@@ -1,0 +1,256 @@
+{
+  "job": {
+    "id": "1",
+    "name": "services-job",
+    "repo": {
+      "owner": "coldog",
+      "name": "jenkins-job-test",
+      "provider": "github.com",
+      "token": "",
+      "commit": "93de9794c75ffee34218943011befd7a39f5b5b3"
+    },
+    "builds": [
+      {
+        "name": "test-app",
+        "dockerfile": ".",
+        "args": null,
+        "docker": {
+          "image": "test-app",
+          "name": "test-app",
+          "cmd": "bash",
+          "entryPoint": "",
+          "netAlias": "test-app",
+          "env": null,
+          "workDir": "",
+          "tty": false,
+          "stdinOpen": true
+        },
+        "after": null,
+        "before": null
+      }
+    ],
+    "services": [
+      {
+        "name": "mysql",
+        "docker": {
+          "image": "mysql:5.7",
+          "name": "mysql",
+          "cmd": "",
+          "entryPoint": "",
+          "netAlias": "mysql",
+          "env": null,
+          "workDir": "",
+          "tty": false,
+          "stdinOpen": false
+        },
+        "after": null,
+        "before": null
+      }
+    ],
+    "sections": [
+      {
+        "run_on_failure": false,
+        "run_all_cmds": false,
+        "name": "exec in docker",
+        "commands": [
+          "docker exec -i test-app bash -c 'echo hello'"
+        ],
+        "on_success": null,
+        "on_failure": null
+      }
+    ],
+    "env": null
+  },
+  "results": [
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "fetch"
+      ],
+      "time": 1258649790,
+      "output": [],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "checkout",
+        "93de9794c75ffee34218943011befd7a39f5b5b3"
+      ],
+      "time": 7622523,
+      "output": [
+        "HEAD is now at 93de979... Update Dockerfile"
+      ],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "show",
+        "--quiet",
+        "--format=%ae",
+        "93de9794c75ffee34218943011befd7a39f5b5b3"
+      ],
+      "time": 6722429,
+      "output": [
+        "colinwalker270@gmail.com"
+      ],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "rev-parse",
+        "--abbrev-ref",
+        "HEAD"
+      ],
+      "time": 6638990,
+      "output": [
+        "HEAD"
+      ],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "ls",
+        "-a"
+      ],
+      "time": 3529913,
+      "output": [
+        "."
+      ],
+      "error": null
+    },
+    {
+      "topic": "services",
+      "cmd": [
+        "docker",
+        "network",
+        "create",
+        "services-job-1"
+      ],
+      "time": 550816594,
+      "output": [
+        "7bb2c0448decc0c95d7ab37e18ed26b4232273e02978544aa861acf3ec39ff3e"
+      ],
+      "error": null
+    },
+    {
+      "topic": "services/mysql",
+      "cmd": [
+        "docker",
+        "run",
+        "-d",
+        "--name=mysql",
+        "--network=services-job-1",
+        "--network-alias=mysql",
+        "mysql:5.7",
+        ""
+      ],
+      "time": 945225823,
+      "output": [
+        "61c35e3e16a3bb4e107db7c8c3aba872844e71bf927a996c0c16fcf1b6c01715"
+      ],
+      "error": null
+    },
+    {
+      "topic": "services/mysql",
+      "cmd": [
+        "docker",
+        "build",
+        "-t",
+        "test-app",
+        "."
+      ],
+      "time": 181833432,
+      "output": [
+        "Sending build context to Docker daemon 74.24 kB\r",
+        "Step 1 : FROM ubuntu",
+        " ---\u003e bd3d4369aebc",
+        "Successfully built bd3d4369aebc"
+      ],
+      "error": null
+    },
+    {
+      "topic": "builds/test-app",
+      "cmd": [
+        "docker",
+        "run",
+        "-d",
+        "--name=test-app",
+        "--network=services-job-1",
+        "--network-alias=test-app",
+        "-i",
+        "test-app",
+        "bash"
+      ],
+      "time": 988208318,
+      "output": [
+        "f30bf13e307d47657ca39566e5f1ce52442d640f9c5eb555f5041a5a8b16f967"
+      ],
+      "error": null
+    },
+    {
+      "topic": "exec in docker",
+      "cmd": [
+        "sh",
+        "-c",
+        "docker exec -i test-app bash -c 'echo hello'"
+      ],
+      "time": 139052517,
+      "output": [
+        "hello"
+      ],
+      "error": null
+    },
+    {
+      "topic": "cleanup",
+      "cmd": [
+        "docker",
+        "rm",
+        "-f",
+        "mysql"
+      ],
+      "time": 70161186,
+      "output": [
+        "mysql"
+      ],
+      "error": null
+    },
+    {
+      "topic": "cleanup",
+      "cmd": [
+        "docker",
+        "rm",
+        "-f",
+        "test-app"
+      ],
+      "time": 648220722,
+      "output": [
+        "test-app"
+      ],
+      "error": null
+    },
+    {
+      "topic": "cleanup",
+      "cmd": [
+        "docker",
+        "network",
+        "rm",
+        "services-job-1"
+      ],
+      "time": 640263265,
+      "output": [
+        "services-job-1"
+      ],
+      "error": null
+    }
+  ],
+  "failure": null,
+  "workspace": "/Users/colin/Workspace/go/src/github.com/coldog/ci-minion/minion/workspace/jenkins-job-test"
+}

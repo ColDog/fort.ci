@@ -16,7 +16,7 @@ require "fort_ci/models/model"
 #   }
 # }
 #
-module SimpleCi
+module FortCI
   class Job < Model
     STATUSES = %w(QUEUED PROCESSING FAILED COMPLETED CANCELLED).freeze
 

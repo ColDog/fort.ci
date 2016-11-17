@@ -1,7 +1,7 @@
 require "fort_ci/event"
-require "worker"
+require "fort_ci/worker"
 
-module SimpleCi
+module FortCI
   class EventHandlerJob < Worker::Job
 
     def initialize(data={})

@@ -23,7 +23,7 @@ require "omniauth-bitbucket"
 
 require "jwt"
 
-module SimpleCi
+module FortCI
   class App < Sinatra::Base
     disable :show_exceptions
     helpers Sinatra::JSON

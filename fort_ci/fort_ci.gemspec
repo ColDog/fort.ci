@@ -5,7 +5,7 @@ require 'fort_ci/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "fort_ci"
-  spec.version       = SimpleCi::VERSION
+  spec.version       = FortCI::VERSION
   spec.authors       = ["Colin Walker"]
   spec.email         = ["colinwalker270@gmail.com"]
 

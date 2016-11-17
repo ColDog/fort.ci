@@ -1,6 +1,6 @@
 require "fort_ci/serializers/serializer"
 
-module SimpleCi
+module FortCI
   class ProjectSerializer < BaseSerializer
     type :project
     attributes Project.column_names

@@ -1,6 +1,6 @@
 require "fort_ci/serializers/serializer"
 
-module SimpleCi
+module FortCI
   class TeamSerializer < BaseSerializer
     attributes Team.column_names
   end

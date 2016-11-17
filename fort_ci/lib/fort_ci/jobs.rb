@@ -10,7 +10,7 @@ if Config.database[:adapter] == 'sqlite3'
   copy['adapter'] = 'sqlite'
 end
 
-Worker.db = copy || Config.database
-Worker.queue = Worker::Queue.new
-Worker.queue.log_backtrace = true
-Worker.logger = Log
+FortCI::Worker.db = copy || Config.database
+FortCI::Worker.queue = FortCI::Worker::Queue.new
+FortCI::Worker.queue.log_backtrace = true
+FortCI::Worker.logger = Log

@@ -1,0 +1,37 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "2Fy1Y6Z3lRRX1891WF/+HT4XS2I=",
+			"path": "github.com/dgrijalva/jwt-go",
+			"revision": "9ed569b5d1ac936e6494082958d63a6aa4fff99a",
+			"revisionTime": "2016-11-01T19:39:35Z"
+		},
+		{
+			"checksumSHA1": "CxNwJP++vjUAyy3bbJnNss1Il9Q=",
+			"path": "github.com/moul/http2curl",
+			"revision": "4e24498b31dba4683efb9d35c1c8a91e2eda28c8",
+			"revisionTime": "2016-10-31T19:45:48Z"
+		},
+		{
+			"checksumSHA1": "mjYgaguDxvNSY/5N5TKcpyKlJWg=",
+			"path": "github.com/parnurzeal/gorequest",
+			"revision": "e30af16d4e485943aab0b0885ad6bdbb8c0d3dc7",
+			"revisionTime": "2016-10-02T15:30:06Z"
+		},
+		{
+			"checksumSHA1": "GIGmSrYACByf5JDIP9ByBZksY80=",
+			"path": "golang.org/x/net/idna",
+			"revision": "4971afdc2f162e82d185353533d3cf16188a9f4e",
+			"revisionTime": "2016-11-15T21:05:04Z"
+		},
+		{
+			"checksumSHA1": "AmZIW67T/HUlTTflTmOIy6jdq74=",
+			"path": "golang.org/x/net/publicsuffix",
+			"revision": "4971afdc2f162e82d185353533d3cf16188a9f4e",
+			"revisionTime": "2016-11-15T21:05:04Z"
+		}
+	],
+	"rootPath": "github.com/coldog/ci-minion"
+}

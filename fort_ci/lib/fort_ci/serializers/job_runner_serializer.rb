@@ -7,7 +7,7 @@ require "fort_ci/serializers/serializer"
 # Services []*Service `json:"services"`
 # Sections []*Section `json:"sections"`
 # Env      []string   `json:"env"`
-module SimpleCi
+module FortCI
   class JobRunnerSerializer < BaseSerializer
     attributes :id, :repo, :builds, :services, :sections, :env
 

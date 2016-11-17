@@ -1,6 +1,6 @@
 require "fort_ci/models/model"
 
-module SimpleCi
+module FortCI
   class User < Model
     has_many :user_teams
     has_many :teams, through: :user_teams

@@ -1,4 +1,4 @@
-module SimpleCi
+module FortCI
   class Event
     attr_accessor :name, :project, :data
 

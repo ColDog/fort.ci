@@ -1,0 +1,84 @@
+{
+  "job": {
+    "id": "1.1",
+    "name": "list-files",
+    "repo": null,
+    "builds": null,
+    "services": null,
+    "sections": [
+      {
+        "run_on_failure": false,
+        "run_all_cmds": false,
+        "name": "list-files",
+        "commands": [
+          "ls -a"
+        ],
+        "on_success": [
+          "echo 'ok'"
+        ],
+        "on_failure": [
+          "echo 'fail'"
+        ]
+      }
+    ],
+    "env": null
+  },
+  "results": [
+    {
+      "topic": "services",
+      "cmd": [
+        "docker",
+        "network",
+        "create",
+        "list-files-1.1"
+      ],
+      "time": 649640317,
+      "output": [
+        "021c9de9a5939a034f51cb85b60b5b49dbe0f2446b520d53ec480bd04c11eaaa"
+      ],
+      "error": null
+    },
+    {
+      "topic": "list-files",
+      "cmd": [
+        "sh",
+        "-c",
+        "ls -a"
+      ],
+      "time": 5852335,
+      "output": [
+        "."
+      ],
+      "error": null
+    },
+    {
+      "topic": "list-files",
+      "cmd": [
+        "sh",
+        "-c",
+        "echo 'ok'"
+      ],
+      "time": 3528941,
+      "output": [
+        "ok"
+      ],
+      "error": null
+    },
+    {
+      "topic": "cleanup",
+      "cmd": [
+        "docker",
+        "network",
+        "rm",
+        "list-files-1.1"
+      ],
+      "time": 672618722,
+      "output": [
+        "list-files-1.1"
+      ],
+      "error": null
+    }
+  ],
+  "failure": null,
+  "workspace": ""
+}

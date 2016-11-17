@@ -1,0 +1,113 @@
+{
+  "job": {
+    "id": "1.1",
+    "name": "clone-job",
+    "repo": {
+      "owner": "coldog",
+      "name": "radix-server",
+      "provider": "github.com",
+      "token": "",
+      "commit": "047516a"
+    },
+    "builds": null,
+    "services": null,
+    "sections": null,
+    "env": null
+  },
+  "results": [
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "fetch"
+      ],
+      "time": 636215727,
+      "output": [],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "checkout",
+        "047516a"
+      ],
+      "time": 8106636,
+      "output": [
+        "HEAD is now at 047516a... add memory pooling"
+      ],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "show",
+        "--quiet",
+        "--format=%ae",
+        "047516a"
+      ],
+      "time": 6993798,
+      "output": [
+        "colinwalker270@gmail.com"
+      ],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "git",
+        "rev-parse",
+        "--abbrev-ref",
+        "HEAD"
+      ],
+      "time": 6873292,
+      "output": [
+        "HEAD"
+      ],
+      "error": null
+    },
+    {
+      "topic": "git-sync",
+      "cmd": [
+        "ls",
+        "-a"
+      ],
+      "time": 3657759,
+      "output": [
+        "."
+      ],
+      "error": null
+    },
+    {
+      "topic": "services",
+      "cmd": [
+        "docker",
+        "network",
+        "create",
+        "clone-job-1.1"
+      ],
+      "time": 517270513,
+      "output": [
+        "ea284ca8b4e0693083e288fbdea73f1e02da5f69c4b25a737d4dd9663225234e"
+      ],
+      "error": null
+    },
+    {
+      "topic": "cleanup",
+      "cmd": [
+        "docker",
+        "network",
+        "rm",
+        "clone-job-1.1"
+      ],
+      "time": 577176190,
+      "output": [
+        "clone-job-1.1"
+      ],
+      "error": null
+    }
+  ],
+  "failure": null,
+  "workspace": "/Users/colin/Workspace/go/src/github.com/coldog/ci-minion/minion/workspace/radix-server"
+}

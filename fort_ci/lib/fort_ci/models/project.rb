@@ -1,6 +1,6 @@
 require "fort_ci/models/model"
 
-module SimpleCi
+module FortCI
   class Project < Model
     belongs_to :team, optional: true
     belongs_to :user, optional: true
