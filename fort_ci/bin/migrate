@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "fort_ci"
+require "fort_ci/migrations/create_projects"
+require "fort_ci/migrations/create_pipelines"
+require "fort_ci/migrations/create_jobs"
+require "fort_ci/migrations/create_teams"
+require "fort_ci/migrations/create_users"
+require "fort_ci/migrations/create_user_teams"
+require "fort_ci/migrations/add_references_to_projects"
+
+CreateProjects.migrate(:up)
+CreatePipelines.migrate(:up)
+CreateJobs.migrate(:up)
+CreateTeams.migrate(:up)
+CreateUsers.migrate(:up)
+CreateUserTeams.migrate(:up)
+AddReferencesToProjects.migrate(:up)

@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "fort_ci"
+
+if ARGV[0] == "serve"
+  require "rack"
+  require "fort_ci/app"
+
+  Rack::Handler.get('puma').run SimpleCi::App, Port: 3000
+
+elsif ARGV[0] == "work"
+  require "fort_ci/jobs"
+
+  Worker.queue.run
+
+else
+  puts "Don't know command: #{ARGV[0]}"
+
+end

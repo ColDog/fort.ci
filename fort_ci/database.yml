@@ -1,0 +1,9 @@
+test:
+  adapter: sqlite3
+  database: test.db
+
+development:
+  adapter: mysql2
+  database: simpleci_dev
+  username: root
+  password: ''
